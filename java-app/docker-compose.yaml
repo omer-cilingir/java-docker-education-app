@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  education:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: education:latest
+    ports:
+      - '8080:8080'
+    networks:
+      - mysql_default
+networks:
+  mysql_default:
+    external: true
